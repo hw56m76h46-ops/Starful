@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>STARFUL CLOTHING</title>
+<meta name="description" content="STARFUL CLOTHING — bold streetwear made to stand out.">
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#050505;color:#f5f5f5;font-family:Arial,Helvetica,sans-serif}
+a{color:inherit;text-decoration:none}button,input{font:inherit}
+header{position:sticky;top:0;z-index:20;background:rgba(5,5,5,.94);backdrop-filter:blur(12px);border-bottom:1px solid #222}
+.nav{max-width:1200px;margin:auto;padding:18px 22px;display:flex;align-items:center;justify-content:space-between}
+.logo-text{font-weight:900;letter-spacing:.2em}.navlinks{display:flex;gap:25px;font-size:12px;text-transform:uppercase;letter-spacing:.15em}.cart{border:1px solid #444;padding:9px 13px;cursor:pointer}
+.hero{min-height:88vh;display:grid;place-items:center;text-align:center;padding:80px 20px;background:radial-gradient(circle at center,#151515 0,#050505 52%)}
+.hero img{width:min(300px,68vw);display:block;margin:auto;filter:drop-shadow(0 20px 45px rgba(255,255,255,.08))}
+.eyebrow{font-size:11px;letter-spacing:.45em;color:#aaa;margin-top:25px}.hero h1{font-size:clamp(52px,11vw,120px);margin:10px 0;letter-spacing:.12em}.hero p{max-width:600px;margin:0 auto 30px;color:#aaa;line-height:1.7}
+.btn{display:inline-block;background:#fff;color:#000;border:1px solid #fff;padding:14px 22px;text-transform:uppercase;letter-spacing:.14em;font-size:12px;cursor:pointer}.btn.alt{background:transparent;color:#fff}
+section{max-width:1200px;margin:auto;padding:85px 22px}.sectionhead{display:flex;justify-content:space-between;align-items:end;margin-bottom:32px}.sectionhead h2{margin:0;font-size:32px;letter-spacing:.08em}.muted{color:#8e8e8e}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.product{border:1px solid #242424;background:#0b0b0b;overflow:hidden}.productpic{aspect-ratio:1/1;display:grid;place-items:center;background:linear-gradient(135deg,#151515,#070707);font-size:100px}.productinfo{padding:20px}.productinfo h3{margin:0 0 7px}.productinfo p{margin:0 0 16px;color:#999;font-size:14px}.price{font-weight:bold;margin-bottom:14px}.sizes{display:flex;gap:7px;margin-bottom:14px}.size{background:#111;border:1px solid #333;color:#fff;padding:8px 11px;cursor:pointer}.size.selected{background:#fff;color:#000}
+.about{max-width:760px;color:#bbb;line-height:1.8;font-size:18px}.domain{border:1px solid #242424;padding:40px;text-align:center}.domain h2{font-size:clamp(28px,5vw,55px);letter-spacing:.1em}
+footer{border-top:1px solid #222;padding:30px 22px;display:flex;justify-content:space-between;color:#777;font-size:12px;letter-spacing:.08em}
+.drawer{position:fixed;right:0;top:0;height:100%;width:min(430px,100%);background:#0a0a0a;border-left:1px solid #333;z-index:50;transform:translateX(105%);transition:.25s;padding:24px;overflow:auto}.drawer.open{transform:translateX(0)}
+.drawerhead{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #222;padding-bottom:18px}.close{cursor:pointer;font-size:24px}.cartitem{display:flex;gap:14px;padding:18px 0;border-bottom:1px solid #222}.cartthumb{width:70px;height:70px;background:#151515;display:grid;place-items:center;font-size:28px}.cartitem h4{margin:0 0 6px}.cartitem small{color:#888}.qty{display:flex;gap:8px;align-items:center;margin-top:8px}.qty button{background:#111;border:1px solid #333;color:#fff;width:27px;height:27px;cursor:pointer}.total{display:flex;justify-content:space-between;font-size:20px;font-weight:bold;margin:24px 0}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:40}.overlay.show{display:block}
+.modal{display:none;position:fixed;z-index:60;inset:0;place-items:center;padding:20px}.modal.show{display:grid}.checkout{width:min(600px,100%);max-height:92vh;overflow:auto;background:#0a0a0a;border:1px solid #333;padding:26px}.checkout h2{margin-top:0}.form{display:grid;gap:12px}.form input{width:100%;background:#111;border:1px solid #333;color:#fff;padding:13px}.notice{color:#aaa;font-size:13px;line-height:1.5}.order-success{display:none;text-align:center}.order-success.show{display:block}
+@media(max-width:760px){.navlinks{display:none}.products{grid-template-columns:1fr}.hero h1{font-size:54px}footer{flex-direction:column;gap:10px}}
+</style>
+</head>
+<body>
+<header><nav class="nav">
+<a class="logo-text" href="#">STARFUL</a>
+<div class="navlinks"><a href="#shop">Shop</a><a href="#story">Story</a><a href="#contact">Contact</a></div>
+<button class="cart" onclick="openCart()">CART (<span id="cartCount">0</span>)</button>
+</nav></header>
+
+<main>
+<section class="hero">
+<div>
+<img src="starful-logo.png" alt="STARFUL symbol">
+<div class="eyebrow">STARFUL CLOTHING</div>
+<h1>STAND OUT.</h1>
+<p>Bold essentials. Clean design. A new streetwear brand built around a symbol you won't forget.</p>
+<a class="btn" href="#shop">SHOP THE DROP</a>
+</div>
+</section>
+
+<section id="shop">
+<div class="sectionhead"><h2>THE FIRST DROP</h2><span class="muted">2026 COLLECTION</span></div>
+<div class="products">
+<article class="product">
+<div class="productpic">★</div><div class="productinfo"><h3>STARFUL TEE</h3><p>Heavyweight cotton · Signature front mark</p><div class="price">$32.00</div>
+<div class="sizes"><button class="size selected" onclick="selectSize(this)">S</button><button class="size" onclick="selectSize(this)">M</button><button class="size" onclick="selectSize(this)">L</button><button class="size" onclick="selectSize(this)">XL</button></div>
+<button class="btn" onclick="addToCart('Starful Tee',32,'S')">ADD TO CART</button></div>
+</article>
+<article class="product">
+<div class="productpic">✦</div><div class="productinfo"><h3>STARFUL HOODIE</h3><p>Oversized fit · Premium heavyweight fleece</p><div class="price">$68.00</div>
+<div class="sizes"><button class="size selected" onclick="selectSize(this)">S</button><button class="size" onclick="selectSize(this)">M</button><button class="size" onclick="selectSize(this)">L</button><button class="size" onclick="selectSize(this)">XL</button></div>
+<button class="btn" onclick="addToCart('Starful Hoodie',68,'S')">ADD TO CART</button></div>
+</article>
+<article class="product">
+<div class="productpic">★</div><div class="productinfo"><h3>STARFUL CAP</h3><p>Structured fit · Embroidered signature mark</p><div class="price">$28.00</div>
+<div class="sizes"><button class="size selected" onclick="selectSize(this)">OS</button></div>
+<button class="btn" onclick="addToCart('Starful Cap',28,'OS')">ADD TO CART</button></div>
+</article>
+</div>
+</section>
+
+<section id="story"><h2>THE STARFUL IDEA</h2><p class="about">STARFUL is built around one idea: your clothes should feel like an extension of you. Simple pieces, a recognizable symbol, and a style that doesn't need to shout to get noticed.</p></section>
+
+<section id="contact"><div class="domain"><h2>STARFULCLOTHING.BRAND</h2><p class="muted">Your future home on the web.</p><a class="btn alt" href="mailto:hello@starfulclothing.brand">CONTACT STARFUL</a></div></section>
+</main>
+<footer><span>© 2026 STARFUL CLOTHING</span><span>STARFULCLOTHING.BRAND</span></footer>
+
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+<aside class="drawer" id="drawer"><div class="drawerhead"><h2>YOUR CART</h2><span class="close" onclick="closeCart()">×</span></div>
+<div id="cartItems"></div><div class="total"><span>TOTAL</span><span id="cartTotal">$0.00</span></div>
+<button class="btn" style="width:100%" onclick="openCheckout()">CHECKOUT</button></aside>
+
+<div class="modal" id="modal"><div class="checkout">
+<div id="checkoutForm">
+<div class="drawerhead"><h2>CHECKOUT</h2><span class="close" onclick="closeCheckout()">×</span></div>
+<p class="notice">Demo checkout is ready for your store. To accept real payments, connect this page to a payment processor such as Stripe and a secure server.</p>
+<form class="form" onsubmit="placeOrder(event)">
+<input required placeholder="Full name">
+<input required type="email" placeholder="Email">
+<input required placeholder="Shipping address">
+<input required placeholder="City">
+<input required placeholder="State">
+<input required placeholder="ZIP code">
+<button class="btn" type="submit">PLACE DEMO ORDER</button>
+</form>
+</div>
+<div class="order-success" id="success"><h2>ORDER RECEIVED ⭐</h2><p class="notice">Your demo order has been created. Connect a payment processor to make this a live checkout.</p><button class="btn" onclick="closeCheckout()">BACK TO STORE</button></div>
+</div></div>
+
+<script>
+let cart=[];
+function selectSize(el){el.parentElement.querySelectorAll('.size').forEach(x=>x.classList.remove('selected'));el.classList.add('selected')}
+function addToCart(name,price,size){cart.push({name,price,size});renderCart();openCart()}
+function renderCart(){
+ document.getElementById('cartCount').textContent=cart.length;
+ const box=document.getElementById('cartItems');
+ box.innerHTML='';
+ cart.forEach((item,i)=>{
+  box.innerHTML+=`<div class="cartitem"><div class="cartthumb">★</div><div><h4>${item.name}</h4><small>Size: ${item.size} · $${item.price.toFixed(2)}</small><div class="qty"><button onclick="removeItem(${i})">−</button><span>1</span><button onclick="duplicateItem(${i})">+</button></div></div></div>`;
+ });
+ const total=cart.reduce((s,x)=>s+x.price,0);document.getElementById('cartTotal').textContent='$'+total.toFixed(2);
+}
+function removeItem(i){cart.splice(i,1);renderCart()}
+function duplicateItem(i){cart.push({...cart[i]});renderCart()}
+function openCart(){document.getElementById('drawer').classList.add('open');document.getElementById('overlay').classList.add('show')}
+function closeCart(){document.getElementById('drawer').classList.remove('open');document.getElementById('overlay').classList.remove('show')}
+function openCheckout(){if(!cart.length){alert('Your cart is empty.');return}closeCart();document.getElementById('modal').classList.add('show')}
+function closeCheckout(){document.getElementById('modal').classList.remove('show');document.getElementById('success').classList.remove('show');document.getElementById('checkoutForm').style.display='block'}
+function placeOrder(e){e.preventDefault();document.getElementById('checkoutForm').style.display='none';document.getElementById('success').classList.add('show');cart=[];renderCart()}
+renderCart();
+</script>
+</body>
+</html>
